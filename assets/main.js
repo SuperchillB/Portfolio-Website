@@ -393,10 +393,7 @@ anime({
 			width: 200,
 			duration: 800,
 			easing: 'easeOutElastic', // or easeInOutBack
-			elasticity: 550,
-			complete: function(){
-
-			}
+			elasticity: 550
 		})
 	}
 });
@@ -414,10 +411,7 @@ anime({
 			width: 350,
 			duration: 800,
 			easing: 'easeOutElastic', // or easeInOutBack
-			elasticity: 550,
-			complete: function(){
-
-			}
+			elasticity: 550
 		})
 	}
 });
@@ -434,10 +428,7 @@ anime({
 			width: 200,
 			duration: 800,
 			easing: 'easeOutElastic', // or easeInOutBack
-			elasticity: 550,
-			complete: function(){
-
-			}
+			elasticity: 550
 		})
 	}
 })
@@ -812,19 +803,5 @@ function getOffset(el) {
 // 	svgSurface.height = window.innerHeight;
 // 	redraw();
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
