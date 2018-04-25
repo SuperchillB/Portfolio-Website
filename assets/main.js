@@ -364,20 +364,6 @@ closeBtn.addEventListener('click', function(){
 		// });
 })
 
-
-/*
---------------------------------------------------------
-	MASONRY SETUP
---------------------------------------------------------
-*/
-
-// let msnry = new Masonry( '.grid-photos', {
-// 	itemSelector: '.grid-photos-item',
-// 	columnWidth: 100,
-// 	containerStyle: { position: 'absolute' }
-// 	// gutter: 2
-// });
-
 /*
 --------------------------------------------------------
 	WEB PROJECTS
@@ -405,8 +391,7 @@ anime({
 				anime({
 					targets: '.web-grid-item img',
 					opacity: 1,
-					delay: 1000,
-					duration: 1000
+					delay: 1000
 				});
 			}
 		});
@@ -437,8 +422,7 @@ anime({
 				anime({
 					targets: '.web-grid-item img',
 					opacity: 1,
-					delay: 1000,
-					duration: 1000
+					delay: 1000
 				});
 			}
 		});
@@ -468,8 +452,7 @@ anime({
 				anime({
 					targets: '.web-grid-item img',
 					opacity: 1,
-					delay: 300,
-					duration: 1000
+					delay: 300
 				});
 			}
 		});
@@ -782,7 +765,7 @@ function loadAboutSVG () {
 		targets: '#about-2-shadeSVG, #about-text',
 		translateX: [3000,0],
 		translateY: [3000,0],
-		delay: 800,
+		delay: 1200,
 		easing: 'easeOutCirc'
 	});
 
