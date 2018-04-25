@@ -380,6 +380,7 @@ closeBtn.addEventListener('click', function(){
 
 anime({
 	targets: '#web-grid .web-project-1',
+	background: '#232323',
 	left: ['-100%', 0],
 	translateY: '-50%',
 	rotate: [-360, 0],
@@ -393,12 +394,25 @@ anime({
 			width: 200,
 			duration: 800,
 			easing: 'easeOutElastic', // or easeInOutBack
-			elasticity: 550
+			elasticity: 550,
+			complete: function(){
+				anime({
+					targets: '.web-grid-item img',
+					opacity: 1,
+					delay: 1000
+				});
+			}
+		});
+		anime({
+			targets: '#web-grid .web-project-1',
+			background: '#fff',
+			delay: 300
 		})
 	}
 });
 anime({
 	targets: '#web-grid .web-project-2',
+	background: '#232323',
 	bottom: ['-100%', 0],
 	translateX: '-50%',
 	rotate: [-180, 0],
@@ -411,12 +425,25 @@ anime({
 			width: 350,
 			duration: 800,
 			easing: 'easeOutElastic', // or easeInOutBack
-			elasticity: 550
+			elasticity: 550,
+			complete: function(){
+				anime({
+					targets: '.web-grid-item img',
+					opacity: 1,
+					delay: 1000
+				});
+			}
+		});
+		anime({
+			targets: '#web-grid .web-project-2',
+			background: '#fff',
+			delay: 300
 		})
 	}
 });
 anime({
 	targets: '#web-grid .web-project-3',
+	background: '#232323',
 	right: ['-100%', 0],
 	rotate: [-720, 0],
 	duration: 1200,
@@ -428,13 +455,38 @@ anime({
 			width: 200,
 			duration: 800,
 			easing: 'easeOutElastic', // or easeInOutBack
-			elasticity: 550
+			elasticity: 550,
+			complete: function(){
+				anime({
+					targets: '.web-grid-item img',
+					opacity: 1,
+					delay: 300
+				});
+			}
+		});
+		anime({
+			targets: '#web-grid .web-project-3',
+			background: '#fff',
+			delay: 300
 		})
 	}
 })
 
 
+/* ---------- Display web projects content ----------- */
 
+// let webGridItem = document.getElementsByClassName('web-grid-item');
+// let webProjectContent = document.getElementsByClassName('web-grid-item-content');
+// let 
+
+// for(let i = 0; i < webGridItem; i++){
+// 	webGridItem[i].addEventListener('click', function(){
+// 		console.log(webGridItem[i]);
+// 		// for(let i = 0; i < webProjectContent.length; i++){
+// 		// 	webProjectContent[i].style.display = 'block'
+// 		// }
+// 	});
+// }
 
 
 /*
@@ -557,6 +609,7 @@ function loadHomeSVG () {
 	}
 }
 
+
 /* ---------- Web ----------- */
 
 let webProjectOne = document.getElementById('web-project-1'),
@@ -628,15 +681,15 @@ function loadWebSVG () {
 	function drawWebShadeSVG () {
 		let p1 = webSvgSurfaceOne.polyline(xPositionWebOne, yPositionWebOne, xPositionWebOne+200, yPositionWebOne, xPositionWebOne+200, yPositionWebOne+300, xPositionWebOne-800, yPositionWebOne+3000, xPositionWebOne-1000, yPositionWebOne+3000, xPositionWebOne, yPositionWebOne);
 		p1.attr({
-		    fill: generateColour() // or #d2d2d2 OR rgb(204, 255, 144) OR rgb(255, 229, 127)
+		    fill: '#FF8A80' // or #d2d2d2 OR rgb(204, 255, 144) OR rgb(255, 229, 127) OR #FF8A80 (OR generateColour())
 		});
 		let p2 = webSvgSurfaceTwo.polyline(xPositionWebTwo+350, yPositionWebTwo, xPositionWebTwo, yPositionWebTwo, xPositionWebTwo, yPositionWebTwo+350, xPositionWebTwo+750, yPositionWebTwo+3000, xPositionWebTwo+1000, yPositionWebTwo+3000, xPositionWebTwo+350, yPositionWebTwo);
 		p2.attr({
-		    fill: generateColour() // or #d2d2d2 OR rgb(185, 246, 202) OR rgb(255, 158, 128)
+		    fill: '#bc7cb8' // or #d2d2d2 OR rgb(185, 246, 202) OR rgb(255, 158, 128) OR #bc7cb8 (OR generateColour())
 		});
 		let p3 = webSvgSurfaceThree.polyline(xPositionWebThree, yPositionWebThree, xPositionWebThree, yPositionWebThree+200, xPositionWebThree+200, yPositionWebThree+200, xPositionWebThree+3000, yPositionWebThree-1000, xPositionWebThree+2200, yPositionWebThree-1000, xPositionWebThree, yPositionWebThree);
 		p3.attr({
-		    fill: generateColour() // or #d2d2d2 OR rgb(128, 216, 255) OR rgb(130, 177, 255)
+		    fill: '#84FFFF' // or #d2d2d2 OR rgb(128, 216, 255) OR rgb(130, 177, 255) OR #A7FFEB/#84FFFF (OR generateColour())
 		});
 	}
 }
@@ -689,6 +742,69 @@ function loadPhotoSVG (argument) {
 	}
 }
 
+/* ---------- About ----------- */
+
+let aboutImg = document.getElementById('about-img'),
+	aboutText = document.getElementById('about-text');
+
+let aboutSvgSurfaceOne = Snap('#about-1-shadeSVG'),
+	aboutSvgSurfaceTwo = Snap('#about-2-shadeSVG');
+
+// aboutSvgSurfaceOne.width = window.innerWidth;
+// aboutSvgSurfaceOne.height = window.innerHeight;
+
+function loadAboutSVG () {
+	let xPositionAboutOne = getOffset(aboutImg).x;
+	let yPositionAboutOne = getOffset(aboutImg).y-2000;
+
+	let xPositionAboutTwo = getOffset(aboutText).x;
+	let yPositionAboutTwo = getOffset(aboutText).y-2000;
+
+	drawAboutShadeSVG();
+
+	anime({
+		targets: '#about-1-shadeSVG, #about-img',
+		translateX: [-3000,0],
+		translateY: [-3000,0],
+		delay: 800,
+		easing: 'easeOutCirc'
+	});
+	anime({
+		targets: '#about-2-shadeSVG, #about-text',
+		translateX: [3000,0],
+		translateY: [3000,0],
+		delay: 800,
+		easing: 'easeOutCirc'
+	});
+
+	window.addEventListener('resize', function(){
+		aboutSvgSurfaceOne.clear();
+		aboutSvgSurfaceTwo.clear();
+		
+		// aboutSvgSurfaceOne.width = window.innerWidth;
+		// aboutSvgSurfaceOne.height = window.innerHeight;
+
+		xPositionAboutOne = getOffset(aboutImg).x;
+		yPositionAboutOne = getOffset(aboutImg).y;
+
+		xPositionAboutTwo = getOffset(aboutText).x;
+		yPositionAboutTwo = getOffset(aboutText).y;
+
+		drawAboutShadeSVG();
+	}, false);
+
+	function drawAboutShadeSVG () {
+		let p1 = aboutSvgSurfaceOne.polyline(xPositionAboutOne+200, yPositionAboutOne, xPositionAboutOne+200, yPositionAboutOne+350, xPositionAboutOne, yPositionAboutOne+350, xPositionAboutOne-3000, yPositionAboutOne-3000, xPositionAboutOne-2650, yPositionAboutOne-3000, xPositionAboutOne+200, yPositionAboutOne);
+		p1.attr({
+		    fill: '#232323' // or #d2d2d2 OR rgb(204, 255, 144) OR rgb(255, 229, 127) OR #FF8A80 (OR generateColour())
+		});
+		let p2 = aboutSvgSurfaceTwo.polyline(xPositionAboutTwo+1, yPositionAboutTwo+420, xPositionAboutTwo+1, yPositionAboutTwo, xPositionAboutTwo+550, yPositionAboutTwo, xPositionAboutTwo+3000, yPositionAboutTwo+3000, xPositionAboutTwo+2580, yPositionAboutTwo+3000, xPositionAboutTwo+1, yPositionAboutTwo+420);
+		p2.attr({
+		    fill: '#232323' // or #d2d2d2 OR rgb(185, 246, 202) OR rgb(255, 158, 128) OR #bc7cb8 (OR generateColour())
+		});
+	}
+}
+
 
 /* ---------- General SVG function ----------- */
 
@@ -706,6 +822,10 @@ if (svgElement.getAttribute('data-svg') == "web") {
 	loadPhotoSVG();
 } else if (svgElement.getAttribute('data-svg') == "home") {
 	loadHomeSVG();
+} else if (svgElement.getAttribute('data-svg') == "about") {
+	loadAboutSVG();
+	// change menu button colour to white
+	document.getElementById('menu-btn').style.color = "white";
 }
 
 
