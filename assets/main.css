@@ -539,7 +539,7 @@ body {
 	display: flex;
 	justify-content: center;
 	margin-left: 0;
-	margin-top: 10px;
+	margin-top: 30px;
 }
 /*.web-grid-item div {
 	position: absolute;
@@ -913,11 +913,22 @@ body {
 		position: absolute;
 		/*border: 2px solid red;*/
 		display: block;
+		opacity: 0;
 		z-index: -1;
 	}
 
 	polyline {
 		transition: fill ease 9s;
 	}
+
+	/*#web-1-shadeSVG {
+		opacity: 0;
+	}
+	#web-2-shadeSVG {
+		opacity: 0;
+	}
+	#web-3-shadeSVG {
+		opacity: 0;
+	}*/
 
 

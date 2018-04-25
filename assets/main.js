@@ -61,6 +61,7 @@
 // 	// }
 //   })
 
+let svgElements = document.getElementsByTagName('svg');
 
 var myTimeline3 = anime.timeline();
 myTimeline3
@@ -68,7 +69,12 @@ myTimeline3
     targets: 'body',
 	translateY: [2000, 0], // Animate all divs translateX property to 250px
 	easing: 'easeInOutCirc', // or easeInOutCirc or easeInOutElastic (originally easeInOutBack)
-	rotate: '1turn'
+	rotate: '1turn',
+	complete: function(){
+		for(let i = 0; i < svgElements.length; i++){
+			svgElements[i].style.opacity = 1;
+		}
+	}
   })
 //   .add({
 //     targets: '.photo-5, .photo-6',
@@ -399,7 +405,8 @@ anime({
 				anime({
 					targets: '.web-grid-item img',
 					opacity: 1,
-					delay: 1000
+					delay: 1000,
+					duration: 1000
 				});
 			}
 		});
@@ -430,7 +437,8 @@ anime({
 				anime({
 					targets: '.web-grid-item img',
 					opacity: 1,
-					delay: 1000
+					delay: 1000,
+					duration: 1000
 				});
 			}
 		});
@@ -460,7 +468,8 @@ anime({
 				anime({
 					targets: '.web-grid-item img',
 					opacity: 1,
-					delay: 300
+					delay: 300,
+					duration: 1000
 				});
 			}
 		});
@@ -683,11 +692,11 @@ function loadWebSVG () {
 		p1.attr({
 		    fill: '#FF8A80' // or #d2d2d2 OR rgb(204, 255, 144) OR rgb(255, 229, 127) OR #FF8A80 (OR generateColour())
 		});
-		let p2 = webSvgSurfaceTwo.polyline(xPositionWebTwo+350, yPositionWebTwo, xPositionWebTwo, yPositionWebTwo, xPositionWebTwo, yPositionWebTwo+350, xPositionWebTwo+750, yPositionWebTwo+3000, xPositionWebTwo+1000, yPositionWebTwo+3000, xPositionWebTwo+350, yPositionWebTwo);
+		let p2 = webSvgSurfaceTwo.polyline(xPositionWebTwo+350, yPositionWebTwo, xPositionWebTwo+1, yPositionWebTwo, xPositionWebTwo+1, yPositionWebTwo+350, xPositionWebTwo+750, yPositionWebTwo+3000, xPositionWebTwo+1000, yPositionWebTwo+3000, xPositionWebTwo+350, yPositionWebTwo);
 		p2.attr({
 		    fill: '#bc7cb8' // or #d2d2d2 OR rgb(185, 246, 202) OR rgb(255, 158, 128) OR #bc7cb8 (OR generateColour())
 		});
-		let p3 = webSvgSurfaceThree.polyline(xPositionWebThree, yPositionWebThree, xPositionWebThree, yPositionWebThree+200, xPositionWebThree+200, yPositionWebThree+200, xPositionWebThree+3000, yPositionWebThree-1000, xPositionWebThree+2200, yPositionWebThree-1000, xPositionWebThree, yPositionWebThree);
+		let p3 = webSvgSurfaceThree.polyline(xPositionWebThree+1, yPositionWebThree, xPositionWebThree+1, yPositionWebThree+200, xPositionWebThree+200, yPositionWebThree+200, xPositionWebThree+3000, yPositionWebThree-1000, xPositionWebThree+2200, yPositionWebThree-1000, xPositionWebThree+1, yPositionWebThree);
 		p3.attr({
 		    fill: '#84FFFF' // or #d2d2d2 OR rgb(128, 216, 255) OR rgb(130, 177, 255) OR #A7FFEB/#84FFFF (OR generateColour())
 		});
@@ -732,7 +741,7 @@ function loadPhotoSVG (argument) {
 	}, false);
 
 	function drawPhotoShadeSVG () {
-		let p2 = photosSvgSurface.polyline(xPositionPhoto, yPositionPhoto, xPositionPhoto+800, yPositionPhoto, xPositionPhoto+3000, yPositionPhoto+3000, xPositionPhoto+2200, yPositionPhoto+3000, xPositionPhoto, yPositionPhoto+500, xPositionPhoto, yPositionPhoto);
+		let p2 = photosSvgSurface.polyline(xPositionPhoto+1, yPositionPhoto, xPositionPhoto+800, yPositionPhoto, xPositionPhoto+3000, yPositionPhoto+3000, xPositionPhoto+2200, yPositionPhoto+3000, xPositionPhoto+1, yPositionPhoto+500, xPositionPhoto+1, yPositionPhoto);
 		document.querySelector('polyline').style.fill = '#232323';
 		setInterval(function(){
 			p2.attr({
