@@ -28,7 +28,7 @@ body {
 	z-index: -1;
 	width: 100vw;
 	height: 100vh;
-	background-image: url("images/squairy_light.png"); /* toggle for better performance */
+	/*background-image: url("images/squairy_light.png"); /* toggle for better performance */
 	background-size: 30%;
 }
 
