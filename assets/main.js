@@ -794,6 +794,11 @@ function loadAboutSVG () {
 		p2.attr({
 		    fill: '#232323' // or #d2d2d2 OR rgb(185, 246, 202) OR rgb(255, 158, 128) OR #bc7cb8 (OR generateColour())
 		});
+
+		// MEDIA QUERIES
+		if (window.matchMedia("(max-width: 500px)").matches) {
+			
+		}
 	}
 }
 
@@ -916,4 +921,15 @@ function getOffset(el) {
 // 	redraw();
 // }
 
+
+
+/*
+--------------------------------------------------------
+	MEDIA QUERIES (FOR SVGs)
+--------------------------------------------------------
+*/
+
+if (window.matchMedia("(max-width: 500px)").matches) {
+
+}
 
