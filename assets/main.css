@@ -36,13 +36,15 @@ body {
 	box-shadow: inset 0 0 0 2000px rgba(99, 255, 221, 0.2);
 }
 .bg-web {
-	box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.4);
+	/*box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.4);*/
+	box-shadow: inset 0 0 0 2000px rgba(192, 199, 255, 0.4);
 }
 .bg-photography {
 	/*box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.2);*/
 	/*box-shadow: inset 0 0 0 2000px rgba(250, 255, 102, 0.2);*/
 	/*box-shadow: inset 0 0 0 2000px rgba(250, 160, 248, 0.2);*/
-	box-shadow: inset 0 0 0 2000px rgba(0, 128, 255, 0.2);
+	/*box-shadow: inset 0 0 0 2000px rgba(0, 128, 255, 0.2);*/
+	box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.4);
 }
 .bg-design {
 	box-shadow: inset 0 0 0 2000px rgba(250, 255, 102, 0.2);
@@ -948,6 +950,36 @@ body {
 		.grid-item a {
 			transform: rotateZ(-90deg);
 			font-size: 0.6rem;
+		}
+		.move-right-1:hover {
+			background-image: none;
+		}
+		.move-right-2:hover {
+			background-image: none;
+		}
+		.move-right-3:hover {
+			background-image: none;
+		}
+		.move-right-4:hover {
+			background-image: none;
+		}
+		.move-right-5:hover {
+			background-image: none;
+		}
+		.move-right-6:hover {
+			background-image: none;
+		}
+		.move-right-7:hover {
+			background-image: none;
+		}
+		.move-right-8:hover {
+			background-image: none;
+		}
+		.move-right-9:hover {
+			background-image: none;
+		}
+		.move-right-10:hover {
+			background-image: none;
 		}
 	}
 
